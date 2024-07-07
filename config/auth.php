@@ -40,7 +40,12 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admins', // provider name
+        ]
     ],
+
 
     /*
     |--------------------------------------------------------------------------
@@ -58,12 +63,15 @@ return [
     | Supported: "database", "eloquent"
     |
     */
-
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
             'model' => env('AUTH_MODEL', App\Models\User::class),
         ],
+        'admins' => [ // provider name is linked to the driver and class
+            'driver' => 'eloquent',
+            'model' => env('AUTH_MODEL', App\Models\Admin::class),
+        ]
 
         // 'users' => [
         //     'driver' => 'database',
