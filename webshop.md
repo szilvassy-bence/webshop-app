@@ -8,11 +8,8 @@
     - username
     - email
     - password
-    - role
 
 #### Authorities
-
-##### Role = user
     - see its profile
     - change its profile information
     - save to favorites
@@ -20,7 +17,14 @@
     - edit the cart
     - send order
 
-##### Role = admin
+### Admin
+
+#### Properties 
+    - username
+    - email
+    - password
+
+#### Authorities
     - delete user
     - handle orders -> shipped removes quantities
     - create products
