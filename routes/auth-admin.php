@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminPasswordController;
 use App\Http\Controllers\Admin\AuthenticatedAdminSessionController;
 use App\Http\Controllers\Admin\RegisteredAdminController;
 use Illuminate\Support\Facades\Route;
@@ -18,5 +19,7 @@ Route::prefix('/admin')->group(function () {
     Route::middleware('admin')->group(function () {
         Route::post('/logout', [AuthenticatedAdminSessionController::class, 'destroy'])
             ->name('admin.logout');
+        Route::put('password', [AdminPasswordController::class, 'update'])
+            ->name('admin.password.update');
     });
 });
