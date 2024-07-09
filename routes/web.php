@@ -37,6 +37,10 @@ Route::middleware('admin')->group(function () {
     // <--------- Manage users ----------->
     Route::get('/admin/users', [UserController::class, 'index'])
         ->name('admin.users.index');
+    Route::get('/admin/users/{user}/edit', [UserController::class, 'edit'])
+        ->name('admin.users.edit');
+    Route::patch('/admin/users/{user}/update/profile', [UserController::class, 'updateProfile'])
+        ->name('admin.users.update.profile');
     // <--------- END Manage users ----------->
 
 
